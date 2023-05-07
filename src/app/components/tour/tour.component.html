@@ -1,0 +1,18 @@
+<div class = "tour">
+  <ul>
+    <div *ngFor="let tour of tours">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{tour.tourName}}</mat-card-title>
+        <mat-card-subtitle>{{tour.tourDescription}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Длительность тура: {{tour.tourDuration}} </p>
+        <p>Стоимость тура: {{tour.tourPrice}} рублей </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">Узнать больше</button>
+      </mat-card-actions>    </mat-card>
+    </div>
+  </ul>
+</div>

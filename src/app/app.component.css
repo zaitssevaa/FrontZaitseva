@@ -1,0 +1,27 @@
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #2c0934;
+  color: #fff;
+}
+article {
+  min-height: 70%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.menu {
+  background-color: #ce56ce;
+  padding: 1em;
+  border: solid thin black;
+}
+
+menu {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin-bottom: 0;
+  gap: 1em;
+}
+
