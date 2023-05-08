@@ -1,5 +1,42 @@
 <div class = "tour">
   <ul>
+    <div class="view-toggle">
+      <button mat-raised-button  (click)="viewType = 'table'">Таблица</button>
+      <button mat-raised-button  (click)="viewType = 'cards'">Карточки</button>
+    </div>
+
+
+    <ng-container *ngIf="viewType === 'table'; else cardView">
+      <table>
+        <thead>
+        <tr>
+          <th>Название тура</th>
+          <th>Описание тура</th>
+          <th>Тип тура</th>
+          <th>Страна</th>
+          <th>Дата</th>
+          <th>Стоимость тура (руб) </th>
+          <th>Длительность (дни)</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tour of tours">
+          <td>{{ tour.tourName }}</td>
+          <td>{{ tour.tourDescription }}</td>
+          <td>{{ tour.tourType }}</td>
+          <td>{{ tour.tourCountry}}</td>
+          <td>{{ tour.tourDate | date}}</td>
+          <td>{{ tour.tourPrice}}</td>
+          <td>{{ tour.tourDuration}}</td>
+          <td><button class="custom-button" mat-raised-button >Узнать большое</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </ng-container>
+
+    <ng-template #cardView>
+      <div class="card-container">
     <div *ngFor="let tour of tours">
     <mat-card>
       <mat-card-header>
@@ -7,12 +44,14 @@
         <mat-card-subtitle>{{tour.tourDescription}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p>Длительность тура: {{tour.tourDuration}} </p>
+        <p>Длительность тура: {{tour.tourDuration}} дней </p>
         <p>Стоимость тура: {{tour.tourPrice}} рублей </p>
       </mat-card-content>
       <mat-card-actions>
         <button mat-raised-button color="primary">Узнать больше</button>
       </mat-card-actions>    </mat-card>
     </div>
+      </div>
+    </ng-template>
   </ul>
 </div>

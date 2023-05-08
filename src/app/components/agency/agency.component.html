@@ -1,5 +1,33 @@
-<div class = "agency">
-  <ul>
+<input type="text" [(ngModel)]="searchTerm" placeholder="Введите имя Агенсва ">
+<button mat-raised-button color="primary" (click)="searchAgency()">Найти</button>
+<div class="view-toggle">
+  <button mat-raised-button  (click)="viewType = 'table'">Таблица</button>
+  <button mat-raised-button  (click)="viewType = 'cards'">Карточки</button>
+</div>
+
+<ng-container *ngIf="viewType === 'table'; else cardView">
+  <table>
+    <thead>
+    <tr>
+      <th>Название агенсва</th>
+      <th>Адресс</th>
+      <th>Номер телефона</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let agency of agencys">
+      <td>{{ agency.agencyName }}</td>
+      <td>{{ agency.address}}</td>
+      <td>{{ agency.telephoneNumber}}</td>
+      <td><button class="custom-button" mat-raised-button >Узнать большое</button></td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #cardView>
+  <div class="card-container">
     <div *ngFor="let agency of agencys">
       <mat-card>
         <mat-card-header>
@@ -14,5 +42,5 @@
         </mat-card-actions>
       </mat-card>
     </div>
-  </ul>
-</div>
+  </div>
+</ng-template>

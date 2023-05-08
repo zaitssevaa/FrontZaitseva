@@ -31,6 +31,67 @@ mat-card-actions button {
   color: #555555;
   background-color: #c4c4c4;
   border: 2px solid #555555;
-  border-radius: 20px;
   padding: 10px 20px;
 }
+
+.view-toggle{
+  color: #bf82d2;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 10px;
+  gap: 10em;
+
+}
+ button{
+   color: #bf82d2;
+   gap: 5em;
+   padding: 10px 30px;
+   margin: 10px;
+   border: 2px solid #2c0934;
+ }
+
+.mat-raised-button{
+  color: #bf82d2;
+  gap: 5em;
+  padding: 10px 30px;
+  margin: 10px;
+
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
+  background-color: #423341;
+  font-size: 36px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 22px;
+
+}
+
+th {
+  background-color: #423341;
+  color: #e8e3ea;
+  font-size: 18px;
+}
+
+tr:nth-child(even) {
+  background-color: #423341;
+}
+
+tr:hover {
+  background-color: #2c0934;
+}
+
+.custom-button {
+  font-size: 16px;
+  color: #d5ccd7;
+  background-color: #c4c4c4;
+  border: 2px solid #2c0934;
+  padding: 10px 20px;
+}
+

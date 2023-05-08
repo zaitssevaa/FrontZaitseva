@@ -10,6 +10,7 @@ import {ITour} from "./tour";
 export class TourComponent implements OnInit {
 
   public tours: ITour[]=[];
+  viewType: string = 'table';
   constructor(private _tourservice: TourService) { }
 
   ngOnInit(): void {

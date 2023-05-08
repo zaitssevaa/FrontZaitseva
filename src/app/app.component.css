@@ -11,17 +11,55 @@ article {
   grid-template-rows: auto 1fr auto;
 }
 
+.des {
+  display: flex;
+  grid-template-rows: auto 1fr auto;
+}
+
 .menu {
   background-color: #ce56ce;
-  padding: 1em;
+  padding: 2em;
   border: solid thin black;
 }
 
 menu {
   list-style-type: none;
   display: flex;
-  padding: 0;
-  margin-bottom: 0;
+  padding: 2px 0px;
+  margin-bottom: 20px;
   gap: 1em;
 }
 
+.header {
+  padding: 2px 40px;
+  text-align: left;
+  background: #423341;
+  color: white;
+  font-family:monospace;
+  font-size: 40px;
+}
+
+button{
+  font-size: 30px;
+}
+
+h1{
+  font-size: 40px;
+  padding: 2px 0px;
+}
+
+h2{
+  font-size: 20px;
+  padding: 1px 8px;
+}
+
+svg {
+  font-size: 10px;
+}
+
+
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}

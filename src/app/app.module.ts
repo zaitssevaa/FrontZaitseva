@@ -11,6 +11,9 @@ import {FormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgencyComponent } from './components/agency/agency.component';
 import {AgencyService} from "./components/agency/agency.service";
+import { AuthComponent } from './components/auth/auth.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -18,14 +21,18 @@ import {AgencyService} from "./components/agency/agency.service";
     AppComponent,
     TourComponent,
     AgencyComponent,
-    routingComponents
+    routingComponents,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatCardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [
     TourService,
