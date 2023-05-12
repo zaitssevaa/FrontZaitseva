@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ITour} from "./components/tour/tour";
 import {IAgency} from "./components/agency/agency";
+import {TourService} from "./components/tour/tour.service";
 
 @Component({
   selector: 'app-root',
@@ -14,5 +15,18 @@ export class AppComponent {
   agencys: IAgency[] = [];
 
 
+  constructor(private tourservice: TourService) {}
+
+  ngOnInit(): void {
+    this.tourservice.getTours().subscribe(
+      (data: ITour[]) => {
+        this.tours = data;
+        console.log(data); // выведет полученные данные в консоль
+      },
+      (error) => {
+        console.log(error); // выведет ошибку в консоль
+      }
+    );
+  }
 
 }

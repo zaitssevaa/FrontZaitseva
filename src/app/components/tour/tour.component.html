@@ -1,11 +1,11 @@
+<input type="text" [(ngModel)]="searchTerm" placeholder="Тур ">
+<button mat-raised-button color="primary" (click)="searchTour()">Найти</button>
 <div class = "tour">
   <ul>
     <div class="view-toggle">
       <button mat-raised-button  (click)="viewType = 'table'">Таблица</button>
       <button mat-raised-button  (click)="viewType = 'cards'">Карточки</button>
     </div>
-
-
     <ng-container *ngIf="viewType === 'table'; else cardView">
       <table>
         <thead>
@@ -15,9 +15,7 @@
           <th>Тип тура</th>
           <th>Страна</th>
           <th>Дата</th>
-          <th>Стоимость тура (руб) </th>
           <th>Длительность (дни)</th>
-
         </tr>
         </thead>
         <tbody>
@@ -27,9 +25,8 @@
           <td>{{ tour.tourType }}</td>
           <td>{{ tour.tourCountry}}</td>
           <td>{{ tour.tourDate | date}}</td>
-          <td>{{ tour.tourPrice}}</td>
           <td>{{ tour.tourDuration}}</td>
-          <td><button class="custom-button" mat-raised-button >Узнать большое</button></td>
+          <td><button class="custom-button" mat-raised-button (click)="goToDetails(tour.tourId)">Узнать большое</button></td>
         </tr>
         </tbody>
       </table>
@@ -45,13 +42,17 @@
       </mat-card-header>
       <mat-card-content>
         <p>Длительность тура: {{tour.tourDuration}} дней </p>
-        <p>Стоимость тура: {{tour.tourPrice}} рублей </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary">Узнать больше</button>
-      </mat-card-actions>    </mat-card>
+        <td><button class="custom-button" mat-raised-button (click)="goToDetails(tour.tourId)" >Узнать большое</button></td>
+      </mat-card-actions>
+    </mat-card>
+
+
     </div>
       </div>
     </ng-template>
   </ul>
 </div>
+
+

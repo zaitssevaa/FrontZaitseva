@@ -14,6 +14,8 @@ import {AgencyService} from "./components/agency/agency.service";
 import { AuthComponent } from './components/auth/auth.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { TourdetailsComponent } from './components/tourdetails/tourdetails.component';
+import {TourdetailsService} from "./components/tourdetails/tourdetails.service";
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import {MatButtonModule} from "@angular/material/button";
     TourComponent,
     AgencyComponent,
     routingComponents,
-    AuthComponent
+    AuthComponent,
+    TourdetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ import {MatButtonModule} from "@angular/material/button";
   ],
   providers: [
     TourService,
-    AgencyService
+    AgencyService,
+    TourdetailsService
   ],
   bootstrap: [
     AppComponent

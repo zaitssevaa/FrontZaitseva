@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 import {ITour} from "./tour";
 
 @Injectable()
@@ -12,4 +12,11 @@ export class TourService{
   {
     return this.http.get<ITour[]>("http://localhost:5232/api/Tours/GetAllTour");
   }
+
+  searchTour(name: string): Observable<ITour[]> {
+    return this.http.get<ITour[]>(`http://localhost:5232/api/Tours/GetTourByName/${name}`).pipe(
+      tap((response) => console.log(response))
+    );
+  }
+
 }

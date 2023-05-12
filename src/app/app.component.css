@@ -6,7 +6,7 @@ footer {
   color: #fff;
 }
 article {
-  min-height: 70%;
+  min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
@@ -63,3 +63,4 @@ svg {
   padding-left:0;
   list-style:none
 }
+
